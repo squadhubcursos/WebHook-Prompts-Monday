@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Prompts para o Monday.com – Baixe Grátis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:       #08090F;
+      --surface:  #0F1019;
+      --card:     #13141E;
+      --border:   rgba(255,255,255,0.07);
+      --text:     #EEEFFE;
+      --muted:    #4E5275;
+      --red:      #FF3D57;
+      --brand:    #009ada;
+      --blue:     #579BFC;
+      --green:    #00CA72;
+      --yellow:   #FAB92E;
+      --purple:   #A25DDC;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Background atmosphere ── */
+    .atm {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      overflow: hidden;
+    }
+    .atm-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+    }
+    .atm-blob-1 {
+      width: 700px; height: 700px;
+      top: -200px; right: -150px;
+      background: radial-gradient(circle, rgba(0,154,218,0.13) 0%, transparent 70%);
+    }
+    .atm-blob-2 {
+      width: 500px; height: 500px;
+      bottom: -100px; left: -100px;
+      background: radial-gradient(circle, rgba(87,155,252,0.09) 0%, transparent 70%);
+    }
+    .atm-blob-3 {
+      width: 300px; height: 300px;
+      bottom: 30%; right: 25%;
+      background: radial-gradient(circle, rgba(0,202,114,0.06) 0%, transparent 70%);
+    }
+
+    /* ── Site header ── */
+    .site-header {
+      position: relative; z-index: 2;
+      padding: 28px 24px 0;
+    }
+    .site-header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .site-logo {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative; z-index: 1;
+      min-height: calc(100vh - 80px);
+      display: flex; align-items: center;
+      padding: 32px 24px 48px;
+    }
+
+    .wrap {
+      max-width: 1140px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* ── Left column ── */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* Headline */
+    h1 {
+      font-size: clamp(42px, 5.5vw, 70px);
+      font-weight: 900;
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+    }
+    h1 .hl {
+      color: var(--brand);
+    }
+
+    /* Body */
+    .body-text {
+      font-size: 17px;
+      line-height: 1.65;
+      color: #6C708E;
+      max-width: 480px;
+    }
+
+    /* Form */
+    .form-area {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cta {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 11px;
+      padding: 16px 28px;
+      font-size: 16px;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: -0.01em;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 24px rgba(0,154,218,0.3);
+      align-self: flex-start;
+    }
+    .cta:hover {
+      background: #0088C5;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,154,218,0.4);
+    }
+    .cta:active { transform: translateY(0); }
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      padding-left: 2px;
+    }
+
+    /* ── Right column – PDF card ── */
+    .visual {
+      position: relative;
+    }
+
+    /* Soft glows behind card */
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .glow-1 {
+      width: 200px; height: 200px;
+      top: -50px; right: -40px;
+      background: rgba(0,154,218,0.25);
+    }
+    .glow-2 {
+      width: 160px; height: 160px;
+      bottom: 40px; right: -30px;
+      background: rgba(87,155,252,0.18);
+    }
+    .glow-3 {
+      width: 120px; height: 120px;
+      bottom: -20px; left: 30px;
+      background: rgba(0,202,114,0.14);
+    }
+
+    /* The card itself */
+    .pdf-card {
+      position: relative; z-index: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 32px 64px rgba(0,0,0,0.55),
+        0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    /* Floating label */
+    .pdf-float-label {
+      position: absolute;
+      top: -14px; left: 24px; z-index: 2;
+      background: var(--yellow);
+      color: #0A0A12;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 20px;
+    }
+
+    /* Card header */
+    .card-head {
+      padding: 16px 20px;
+      background: linear-gradient(160deg, #161723 0%, #111220 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .card-head-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-logo {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .card-free-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(0,202,114,0.12);
+      border: 1px solid rgba(0,202,114,0.25);
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Prompt rows */
+    .card-body {
+      padding: 16px 20px 22px;
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      margin-top: 14px;
+      padding-left: 12px;
+    }
+    .section-label:first-child { margin-top: 0; }
+
+    .prompt-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 10px 7px 10px;
+      border-radius: 0 8px 8px 0;
+      border-left: 2px solid transparent;
+      transition: background 0.15s;
+      cursor: default;
+      margin-bottom: 1px;
+    }
+    .prompt-row:hover {
+      background: rgba(255,255,255,0.03);
+    }
+    .pnum {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 18px;
+      padding-top: 1px;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+    .prompt-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .prompt-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .prompt-sub {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-top: 2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    } 
+
+    /* ── Responsive ── */
+    @media (max-width: 920px) {
+      .wrap {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero { padding: 56px 20px 64px; }
+      .visual { order: -1; }
+      .cta { width: 100%; padding: 17px; font-size: 16px; }
+      .body-text { max-width: none; }
+    }
+
+    @media (max-width: 420px) {
+      h1 { font-size: 38px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cta:hover { transform: none; }
+    }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(8,9,15,0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-iframe-wrap {
+      width: 100%;
+      max-width: 520px;
+      height: 605px;
+      border-radius: 8px;
+      overflow: hidden;
+      animation: modal-in 0.22s ease;
+    }
+    @keyframes modal-in {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to   { opacity: 1; transform: translateY(0)    scale(1); }
+    }
+    .modal-iframe-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background atmosphere -->
+  <div class="atm" aria-hidden="true">
+    <div class="atm-blob atm-blob-1"></div>
+    <div class="atm-blob atm-blob-2"></div>
+    <div class="atm-blob atm-blob-3"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <img src="https://raw.githubusercontent.com/squadhubcursos/WebHook-Prompts-Monday/main/Logo_SH1.png" alt="SquadHub" class="site-logo">
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="wrap">
+
+      <!-- ── Left: Content ── -->
+      <div class="content">
+
+        <h1>
+          Garanta os 10 melhores<br>
+          prompts de IA para<br>
+          usar na <span class="hl">Monday.com</span>
+        </h1>
+
+        <p class="body-text">
+          Prompts testados para criar agentes que trabalham por você,
+          montar quadros completos do zero e desenvolver aplicativos
+          customizados — tudo dentro do Monday.com, sem precisar saber programar.
+          É só copiar, colar e ver acontecer.
+        </p>
+
+        <div class="form-area">
+          <button class="cta" type="button">
+            Quero meu PDF grátis →
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ── Right: PDF card ── -->
+      <div class="visual" aria-hidden="true">
+
+        <!-- Glows -->
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+
+        <!-- Float badge -->
+        <div class="pdf-float-label">10 prompts</div>
+
+        <div class="pdf-card">
+
+          <!-- Header -->
+          <div class="card-head">
+            <div class="card-head-meta">
+              <span class="card-logo">monday.com</span>
+              <span class="card-free-badge">PDF Grátis</span>
+            </div>
+          </div>
+
+          <!-- Prompt list -->
+          <div class="card-body">
+
+            <!-- Agentes (red) – 4 prompts -->
+            <div class="section-label" style="color:var(--red)">Agentes</div>
+
+            <div class="prompt-row" style="border-left-color:var(--red)">
+              <span class="pnum">01</span>
+              <div class="prompt-text">
+                <div class="prompt-name">O Agente de RH que Nunca Dorme</div>
+                <div class="prompt-sub">Recebe a solicitação, verifica se está completa, pede o que falta e encaminha pro responsável</div>
+              </div>
+            </div>
+
+            <div class="prompt-row" style="border-left-color:var(--red)">
+              <span class="pnum">02</span>
+              <div class="prompt-text">
+                <div class="prompt-name">O Vigia de Contratos</div>
+                <div class="prompt-sub">Monitora vencimentos, dispara alertas com 90, 60 e 30 dias e sugere a ação certa pra cada contrato</div>
+              </div>
+            </div>
+
+            <div class="prompt-row" style="border-left-color:var(--red)">
+              <span class="pnum">03</span>
+              <div class="prompt-text">
+                <div class="prompt-name">Fim da Revisão Infinita</div>
+                <div class="prompt-sub">Coleta feedbacks de todos os revisores, identifica conflitos e devolve um único briefing de correção</div>
+              </div>
+            </div>
+
+            <div class="prompt-row" style="border-left-color:var(--red)">
+              <span class="pnum">04</span>
+              <div class="prompt-text">
+                <div class="prompt-name">O Agente Anti-Churn</div>
+                <div class="prompt-sub">Monitora o onboarding, cobra etapas paradas e avisa o CS antes que o problema vire cancelamento</div>
+              </div>
+            </div>
+
+            <!-- Quadros (blue) – 2 prompts -->
+            <div class="section-label" style="color:var(--blue)">Quadros</div>
+
+            <div class="prompt-row" style="border-left-color:var(--blue)">
+              <span class="pnum">05</span>
+              <div class="prompt-text">
+                <div class="prompt-name">O Funil que Trabalha por Você</div>
+                <div class="prompt-sub">Pipeline de vendas B2B completo, com automações de follow-up já configuradas</div>
+              </div>
+            </div>
+
+            <div class="prompt-row" style="border-left-color:var(--blue)">
+              <span class="pnum">06</span>
+              <div class="prompt-text">
+                <div class="prompt-name">A Central da Agência</div>
+                <div class="prompt-sub">Todos os projetos, todos os clientes, todos os prazos — em um quadro só</div>
+              </div>
+            </div>
+
+            <!-- Aplicativos (green) – 4 prompts -->
+            <div class="section-label" style="color:var(--green)">Aplicativos</div>
+
+            <div class="prompt-row" style="border-left-color:var(--green)">
+              <span class="pnum">07</span>
+              <div class="prompt-text">
+                <div class="prompt-name">O Fim do E-mail de Compras</div>
+                <div class="prompt-sub">Um portal de solicitações com aprovação por alçada e rastreio em tempo real</div>
+              </div>
+            </div>
+
+            <div class="prompt-row" style="border-left-color:var(--green)">
+              <span class="pnum">08</span>
+              <div class="prompt-text">
+                <div class="prompt-name">A Tela que Todo CEO Queria Ter</div>
+                <div class="prompt-sub">Todos os OKRs da empresa em um painel vivo, sem reunião de status</div>
+              </div>
+            </div>
+
+            <div class="prompt-row" style="border-left-color:var(--green)">
+              <span class="pnum">09</span>
+              <div class="prompt-text">
+                <div class="prompt-name">Onboarding Perfeito</div>
+                <div class="prompt-sub">Um app que guia o novo colaborador do zero — sem o RH precisar explicar tudo de novo</div>
+              </div>
+            </div>
+
+            <div class="prompt-row" style="border-left-color:var(--green)">
+              <span class="pnum">10</span>
+              <div class="prompt-text">
+                <div class="prompt-name">Marketing Sem Caos</div>
+                <div class="prompt-sub">Todas as campanhas, status e resultados em uma tela só. Reunião de alinhamento? Cancelada.</div>
+              </div>
+            </div>
+
+          </div><!-- /card-body -->
+        </div><!-- /pdf-card -->
+      </div><!-- /visual -->
+
+    </div><!-- /wrap -->
+  </main>
+
+  <!-- ── Form modal ── -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-iframe-wrap">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/1LYPHNjwWGxnMgVHCJSt"
+        id="inline-1LYPHNjwWGxnMgVHCJSt"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Leads PDF prompts - Monday"
+        data-height="605"
+        data-layout-iframe-id="inline-1LYPHNjwWGxnMgVHCJSt"
+        data-form-id="1LYPHNjwWGxnMgVHCJSt"
+        title="Leads PDF prompts - Monday">
+      </iframe>
+    </div>
+  </div>
+
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <script>
+    const modal  = document.getElementById('formModal');
+    const ctaBtn = document.querySelector('.cta');
+
+    ctaBtn.addEventListener('click', () => modal.classList.add('active'));
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') modal.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
