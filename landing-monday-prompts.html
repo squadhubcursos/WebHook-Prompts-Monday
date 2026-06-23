@@ -128,26 +128,29 @@
       gap: 10px;
     }
     .cta {
-      background: var(--brand);
-      color: #fff;
-      border: none;
-      border-radius: 11px;
-      padding: 16px 28px;
-      font-size: 16px;
-      font-weight: 800;
-      font-family: inherit;
-      cursor: pointer;
-      letter-spacing: -0.01em;
-      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 24px rgba(0,154,218,0.3);
-      align-self: flex-start;
+      background: #009ada !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 11px !important;
+      padding: 16px 28px !important;
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      font-family: 'Inter', system-ui, sans-serif !important;
+      cursor: pointer !important;
+      letter-spacing: -0.01em !important;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s !important;
+      box-shadow: 0 4px 24px rgba(0,154,218,0.3) !important;
+      align-self: flex-start !important;
+      display: inline-block !important;
+      text-decoration: none !important;
+      outline: none !important;
     }
     .cta:hover {
-      background: #0088C5;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0,154,218,0.4);
+      background: #0088C5 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 32px rgba(0,154,218,0.4) !important;
     }
-    .cta:active { transform: translateY(0); }
+    .cta:active { transform: translateY(0) !important; }
     .form-note {
       font-size: 12px;
       color: var(--muted);
@@ -390,7 +393,7 @@
         </p>
 
         <div class="form-area">
-          <button class="cta" type="button">
+          <button class="cta" id="ctaBtn" type="button">
             Quero meu PDF grátis →
           </button>
         </div>
@@ -541,16 +544,29 @@
 
   <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <script>
-    const modal  = document.getElementById('formModal');
-    const ctaBtn = document.querySelector('.cta');
+    (function() {
+      function initModal() {
+        var modal  = document.getElementById('formModal');
+        var btn    = document.getElementById('ctaBtn');
+        if (!modal || !btn) return;
 
-    ctaBtn.addEventListener('click', () => modal.classList.add('active'));
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modal.classList.remove('active');
-    });
+        btn.addEventListener('click', function() {
+          modal.classList.add('active');
+        });
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') modal.classList.remove('active');
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initModal);
+      } else {
+        initModal();
+      }
+    })();
   </script>
 
 </body>
